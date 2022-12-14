@@ -15,7 +15,7 @@ const routes: Routes = [
     QuizComponent
   ],
   imports: [
-    RouterModule.forRoot(routes),
+    RouterModule.forChild(routes),
     CommonModule
   ],
   exports: [RouterModule]
