@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpParams} from "@angular/common/http";
 import {environment} from "../../environments/environment";
 import {Observable} from "rxjs";
 
@@ -7,7 +7,8 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class StrapiService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   private apiUrl: string = environment.apiUrl;
 
@@ -16,6 +17,11 @@ export class StrapiService {
   }
 
   getQuiz(id: number): Observable<any> {
-    return this.http.get(this.apiUrl + `/quizzes/${id}`);
+    let queryParams = new HttpParams();
+    queryParams = queryParams
+      .set('populate[0]', 'questions')
+      .set('populate[1]', 'questions.type');
+
+    return this.http.get(this.apiUrl + `/quizzes/${id}`, {params: queryParams});
   }
 }
