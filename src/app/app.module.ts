@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { ServiceWorkerModule, SwRegistrationOptions } from '@angular/service-worker';
 
 import { AppComponent } from './app.component';
+
 import { ShoppingCartItemComponent } from './components/scanned-item/scanned-item.component';
 
 import { environment } from '../environments/environment';
@@ -13,15 +14,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './views/home/home.component';
 import {RouterModule} from "@angular/router";
 
+
 @NgModule({
   declarations: [
     AppComponent,
+
     ShoppingCartItemComponent,
     ScannerComponent,
+
     HomeComponent
   ],
   imports: [
     BrowserModule,
+
     FormsModule,
     HttpClientModule,
 
@@ -40,6 +45,7 @@ import {RouterModule} from "@angular/router";
         };
       }
     },
+
   ],
   bootstrap: [AppComponent]
 })

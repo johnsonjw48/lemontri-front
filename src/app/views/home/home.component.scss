@@ -14,15 +14,19 @@
         font-size: 70%;
 
 
+
         .button1 {
             display: flex;
             justify-content: center;
             background-color: transparent;
             color: #4B4B4B;
+
             //border: 1px solid #408C32;
             border-color: #408C32;
             font-family: Roboto
         }
+
+
 
 
         .button1:hover {
@@ -31,16 +35,17 @@
             font-family: Roboto
         }
 
+
         .button2 {
             display: flex;
             justify-content: center;
             background-color: transparent;
             color: #4B4B4B;
+
             padding: 20px 32px;
             border-color: #408C32;
             font-family: Roboto
         }
-
 
         .button2:hover {
             color: #069B3E;
@@ -86,7 +91,7 @@
 .div1{
     display: flex ;
     justify-content: center;
-    img {
+
         width : 20%;
         padding: 10% 35%;
     }
@@ -110,14 +115,15 @@
     .button1 {
         display: flex;
         justify-content: center;
+
         background-color: transparent;
         color: #4B4B4B;
+
         //border: 1px solid #408C32;
         border-color: #408C32;
         padding: 20px 32px;
         font-family: Roboto
     }
-
 
     .button1:hover {
         //background-color: #069B3E;
@@ -128,12 +134,16 @@
     .button2 {
         display: flex;
         justify-content: center;
+
         background-color: transparent;
         color: #4B4B4B;
+
         padding: 20px 32px;
         border-color: #408C32;
         font-family: Roboto
     }
+
+
 
 
     .button2:hover {
@@ -170,4 +180,6 @@
         //font-family: Roboto;
 
     }
+
 }
+
