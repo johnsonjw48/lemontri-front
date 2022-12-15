@@ -1,0 +1,10 @@
+<article>
+  <h3>{{ statement }}</h3>
+  <div>
+    <ng-container *ngFor="let choice of choiceList; index as i">
+      <button type="button" #choices (click)="onChoiceSelection(choice);" [class.selected]="selectedValue === choice">{{ choice }}</button>
+    </ng-container>
+  </div>
+</article>
+
+
