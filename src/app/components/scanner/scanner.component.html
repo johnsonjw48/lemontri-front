@@ -1,0 +1,54 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-7 col-md-10">
+          <div class="text-center">
+            <img src="../../../assets/images/Group.png" width="600" *ngIf="!scanBareCode">
+
+            <div class="error-message" *ngIf="errorMessage">
+              {{ errorMessage }}
+            </div>
+            <div *ngIf="scanBareCode">
+              <div id="scanner-container" >
+                <!-- QuaggaJS will populate this element -->
+              </div>
+              <div class="shopping-cart">
+
+                <span *ngIf="items.length === 0 else shoppingCartItems">Shopping cart is empty</span>
+                <ng-template #shoppingCartItems>
+
+                  <app-scanned-item
+                    [article]="items[0][0]"
+                  >
+                  </app-scanned-item>
+
+                </ng-template>
+              </div>
+            </div>
+            <h1 class="text-dark hero-5-title mb-0">
+              Faites le bon geste.
+            </h1>
+            <p class="text-white-70 mt-4 hero-5-subtitle f-15 mb-0">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            </p>
+            <div class=" mt-5">
+              <button  class="btn btn-primary me-sm-4" (click)="scanBarCodeButtonClick()">
+                <i class="fas fa-barcode me-1" ></i>
+                Lecteur de code barre
+              </button>
+              <a  class="btn btn-danger me-sm-4" target="_blank">
+                <i class="fas fa-search me-1"></i>
+                Scan d'objet
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- col end -->
+      </div>
+      <!-- row end -->
+    </div>
+
+  </div>
+</div>
+
