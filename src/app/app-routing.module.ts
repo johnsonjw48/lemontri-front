@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import {PreloadAllModules, RouterModule, Routes} from "@angular/router";
 import {HomeComponent} from "./views/home/home.component";
 
+import {ScannerComponent} from "./components/scanner/scanner.component";
+
+
 export const routes: Routes = [
   {
     path: '',
@@ -11,8 +14,11 @@ export const routes: Routes = [
   {
     path: 'quiz',
     loadChildren: () => import('./views/quiz/quiz.module').then(m => m.QuizModule)
+  },
+  {
+    path: 'scan',
+    component: ScannerComponent
   }
-
 ];
 
 @NgModule({
