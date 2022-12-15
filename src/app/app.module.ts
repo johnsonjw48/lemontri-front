@@ -9,12 +9,16 @@ import { ShoppingCartItemComponent } from './components/scanned-item/scanned-ite
 import { environment } from '../environments/environment';
 import {HttpClientModule} from "@angular/common/http";
 import { ScannerComponent } from './components/scanner/scanner.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './views/home/home.component';
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [
     AppComponent,
     ShoppingCartItemComponent,
-    ScannerComponent
+    ScannerComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +26,9 @@ import { ScannerComponent } from './components/scanner/scanner.component';
     HttpClientModule,
 
     // PWA support
-    ServiceWorkerModule.register('ngsw-worker.js')
+    ServiceWorkerModule.register('ngsw-worker.js'),
+    AppRoutingModule,
+    RouterModule
   ],
   providers: [
     {
