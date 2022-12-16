@@ -1,8 +1,10 @@
 :host {
   display: flex;
-  align-items: center;
   background-color: #069B3E;
   height: 100%;
+  @media (min-width: 768px) {
+    align-items: center;
+  }
 }
 
 img {
