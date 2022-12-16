@@ -1,0 +1,26 @@
+<header class="d-flex align-items-center border-bottom mb-5" style="height: 60px; background-color: white">
+  <div class="container">
+    <button type="button" class="btn btn-outline-dark" routerLink="/quiz">Retour</button>
+  </div>
+</header>
+
+<section class="container">
+  <app-progress-bar [currentStep]="currentStep" [total]="questionList.length"></app-progress-bar>
+  <ng-container *ngIf="!showResult">
+    <ng-container *ngFor="let question of questionList; index as i">
+      <ng-container *ngIf="currentStep === i + 1">
+        <app-question [question]="question" (checkAnswerEvent)="delayNextQuestion($event)"></app-question>
+      </ng-container>
+    </ng-container>
+  </ng-container>
+
+  <ng-container *ngIf="showResult">
+    <article class="card w-100 m-3 result" style="height: 320px;">
+      <div class="card-body p-5 d-flex flex-column justify-content-center align-items-center">
+        <h2 class="card-title">Résultat</h2>
+        <p class="display-4">{{ score }}/{{ questionList.length }} </p>
+      </div>
+    </article>
+  </ng-container>
+
+</section>

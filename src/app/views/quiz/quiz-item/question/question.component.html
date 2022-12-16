@@ -1,0 +1,13 @@
+<article class="card w-100 m-3" style="height: 320px;">
+  <div class="card-body p-5">
+    <h6 class="card-subtitle mb-2 text-muted text-uppercase">Question</h6>
+    <h3 class="card-title">{{ statement }}</h3>
+    <div class="mt-5 gap-4 choicesList">
+      <ng-container *ngFor="let choice of choiceList; index as i">
+        <button type="button" class="btn btn-outline-dark btn-lg" #choices (click)="onChoiceSelection(choice);" [class.selected]="selectedValue === choice">{{ choice }}</button>
+      </ng-container>
+    </div>
+  </div>
+</article>
+
+

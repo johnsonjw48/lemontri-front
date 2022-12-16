@@ -1,0 +1,14 @@
+<main class="container py-3">
+  <h1 class="display-5 text-center fw-bold">Quiz par thématique(s)</h1>
+
+  <section class="py-3 d-flex gap-4 flex-wrap justify-content-center justify-content-lg-start">
+      <ng-container *ngFor="let quiz of quizList">
+        <div [routerLink]="['./', quiz.id]" class="card" style="width: 18rem; cursor: pointer">
+          <div class="card-img-top" style="height: 180px; background-color: #FFCC07"></div>
+          <div class="card-body">
+            <h5 class="card-title text-center">{{ quiz.attributes.name }}</h5>
+          </div>
+        </div>
+      </ng-container>
+  </section>
+</main>

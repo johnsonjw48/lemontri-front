@@ -1,0 +1,68 @@
+<div class="container-fluid">
+  <header class="d-flex align-items-center border-bottom mb-5" style="height: 60px; background-color: white">
+    <div class="container">
+      <button type="button" class="btn btn-outline-dark me-2" routerLink="/">Retour</button>
+      <button type="button" class="btn btn-outline-dark" routerLink="/quiz">Quiz</button>
+    </div>
+  </header>
+  <div class="row">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-7 col-md-10">
+          <div class="text-center">
+            <div class="mb-5">
+              <img src="../../../assets/images/Group.png" width="80%" *ngIf="!scanBareCode">
+            </div>
+
+
+            <div class="error-message" *ngIf="errorMessage">
+              {{ errorMessage }}
+            </div>
+            <div *ngIf="scanBareCode">
+              <div id="scanner-container" *ngIf="!afterScan">
+                <!-- QuaggaJS will populate this element -->
+              </div>
+              <div class="shopping-cart">
+
+                <span *ngIf="items.length === 0 else shoppingCartItems">Shopping cart is empty</span>
+                <ng-template #shoppingCartItems>
+
+                  <app-scanned-item
+                    [article]="items[0][0]"
+                  >
+                  </app-scanned-item>
+
+                </ng-template>
+              </div>
+            </div>
+            <h1 class="text-dark hero-5-title mb-2 mt-3">
+              Faites le bon <span class="text-warning ">geste.</span>
+            </h1>
+            <p class="text-white-70 mt-5 hero-5-subtitle f-15 mb-0 fst-italic ">
+              LEMON TRI, POUR TOUS VOS DÉCHETS
+            </p>
+            <div class=" mt-5">
+              <div>
+                <button  class="btn btn-outline-success " (click)="scanBarCodeButtonClick()">
+                  <i class="fas fa-barcode me-1" ></i>
+                  Lecteur de code barre
+                </button>
+              </div>
+              <div class="mt-5 mb-5">
+                <button  class="btn btn-outline-warning" target="_blank" (click)="scanObjectButtonClick()">
+                  <i class="fas fa-search me-1"></i>
+                  Scan d'objet
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <!-- col end -->
+      </div>
+      <!-- row end -->
+    </div>
+
+  </div>
+</div>
+

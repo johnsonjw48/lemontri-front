@@ -1,0 +1,16 @@
+.selected.wrong {
+  background-color: rgb(255 204 7 / 40%);
+  border-color: rgb(255 204 7 / 40%);
+}
+
+.selected:not(.wrong) {
+  color: white;
+  border-color: #069B3E;
+}
+
+.choicesList {
+  display: grid;
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
