@@ -1,8 +1,8 @@
 import {
   Component,
-  ElementRef,
+  ElementRef, EventEmitter,
   Input,
-  OnChanges,
+  OnChanges, Output,
   QueryList,
   SimpleChanges,
   ViewChildren
@@ -16,6 +16,7 @@ import {
 export class QuestionComponent implements OnChanges {
 
   @Input() question: any;
+  @Output() checkAnswerEvent = new EventEmitter<boolean>();
 
   type: string;
   statement: string;
@@ -30,6 +31,8 @@ export class QuestionComponent implements OnChanges {
     userAnswer: null,
     isUserWasRight: null
   }
+
+  isUserWasRight: boolean;
 
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -77,12 +80,14 @@ export class QuestionComponent implements OnChanges {
   checkAnswer() {
     if (this.selectedValue === this.correctAnswer) {
       console.log("bonne réponse");
-      this.result.isUserWasRight = true;
+      this.isUserWasRight = true;
     } else {
       console.log("mauvaise réponse");
-      this.result.isUserWasRight = false;
+      this.isUserWasRight = false
     }
     this.disabledButton();
+
+    this.checkAnswerEvent.emit(this.isUserWasRight);
   }
 
   @ViewChildren('choices') choices: QueryList<ElementRef>;
@@ -95,7 +100,9 @@ export class QuestionComponent implements OnChanges {
         item.nativeElement.disabled = true;
       } else {
         //highlight en vert la bonne réponse
-        item.nativeElement.style.backgroundColor = "green";
+        item.nativeElement.style.backgroundColor = "#069B3E";
+        item.nativeElement.style.borderColor = "#069B3E";
+        item.nativeElement.style.color = "#FFFFFF";
       }
     })
   }

@@ -1,7 +1,11 @@
-<div class="stepper">
-  <div class="progress-bar-container">
-    <div class="progress-bar" [ngStyle]="{'width.%': currentStep && multiplier ? currentStep * multiplier : 0}"></div>
-  </div>
+<div class="progress mx-auto w-50" style="height: 20px;">
+  <div
+    class="progress-bar"
+    role="progressbar"
+    [ngStyle]="{'width.%': currentStep * multiplier}"
+    aria-valuemin="0" aria-valuemax="100"></div>
 
-  <span class="steps">{{ currentStep }} sur {{total}}</span>
+
 </div>
+
+<p class="text-center py-3">{{ currentStep }} sur {{ total }}</p>
