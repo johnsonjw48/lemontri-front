@@ -19,7 +19,7 @@
               {{ errorMessage }}
             </div>
             <div *ngIf="scanBareCode">
-              <div id="scanner-container" >
+              <div id="scanner-container" *ngIf="!afterScan">
                 <!-- QuaggaJS will populate this element -->
               </div>
               <div class="shopping-cart">
