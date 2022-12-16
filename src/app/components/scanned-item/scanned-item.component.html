@@ -1,11 +1,8 @@
 <div *ngIf="article !== undefined" >
 
-
-  <div class="text-danger">{{ article.name }}</div>
-
   <div *ngIf="foodInfos.status_verbose === 'product found' && foodInfos.product.packaging">
-    <div>
-      {{foodInfos.product.packaging}}
+    <div class="fw-bold">
+     Le packaging est de type  <span class="text-success"> {{foodInfos.product.packaging}} </span>
     </div>
     <section class="mx-auto my-5" style="max-width: 23rem;">
 
@@ -31,7 +28,7 @@
   </div>
 
   <div *ngIf="foodInfos.status_verbose !== 'product found' || !foodInfos.product.packaging">
-    Informations non disponible
+     <span class="text-warning fw-bold">Informations non disponible</span>
   </div>
 
 </div>

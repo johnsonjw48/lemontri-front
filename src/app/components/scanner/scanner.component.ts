@@ -6,6 +6,7 @@ import { ShoppingCart } from '../../shopping-cart';
 import { UpdateService } from '../../update.service';
 import { environment } from '../../../environments/environment';
 import { getMainBarcodeScanningCamera } from '../../camera-access';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-scanner',
@@ -49,6 +50,16 @@ export class ScannerComponent implements AfterViewInit  {
       }, 10000);
     }
   }
+
+  scanObjectButtonClick (): void {
+    Swal.fire({
+      title: 'En cours de developpement',
+      text: 'Tu pourra bientôt scanner n\'importe  quel objet',
+      icon: 'warning',
+      confirmButtonText: 'Ok'
+    })
+  }
+
 
   scanBarCodeButtonClick (): void {
     this.scanBareCode = !this.scanBareCode;
