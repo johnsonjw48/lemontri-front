@@ -21,7 +21,7 @@ export class BacDeTriService {
     {name: 'Déchets Electroniques', img: 'DEE.png', arrayName : ['Dechet Electonique', 'DEE', 'Electronique']},
     {name: 'Autres Déchets', img: 'DIB.png', arrayName : ['Autre Déchet', 'Autres Déchets', 'DIB']},
     {name: 'Emballages Repas en Carton', img: 'EmballageCarton.png', arrayName : ['Emballage', 'Carton', 'Emballage en carton', 'Repas']},
-    {name: 'Emballages Plastiques', img: 'EmballagePlastique.png', arrayName : ['Emballage', 'Plastique', 'Emballage en plastique', 'Barquette plastique']},
+    {name: 'Emballages Plastiques', img: 'EmballagePlastique.png', arrayName : ['Emballage', 'Plastique', 'Emballage en plastique', 'Barquette plastique', 'Sachet en plastique', 'Sachet plastique', 'Sachet',  'Pot en plastique', 'Sachet alimentaire','Sachets Alimentaires', 'Blister', 'Pot de yahourt' ]},
     {name: 'Film Plastiques', img: 'FilmPlastique.png', arrayName : ['Film', 'Plastique', 'Film plastique']},
     {name: 'Glassine', img: 'Glassine.png', arrayName : ['Glassine']},
     {name: 'Gobelets en Carton', img: 'GobeletCarton.png', arrayName : ['Gobelet', 'Carton', 'Gobelet carton', 'Gobelet en carton']},
