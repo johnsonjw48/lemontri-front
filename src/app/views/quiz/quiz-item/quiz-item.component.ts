@@ -24,6 +24,9 @@ export class QuizItemComponent implements OnInit, OnDestroy {
 
   history: {} = {};
 
+  showResult: boolean = false;
+  score: number = 0;
+
   ngOnInit(): void {
     this.getQuizId();
     if (this.quizId) this.subscribeToSelectedQuiz(this.quizId);
@@ -68,6 +71,9 @@ export class QuizItemComponent implements OnInit, OnDestroy {
   incrementStep() {
     if (this.currentStep < this.questionList.length) {
       this.currentStep += 1;
+    } else {
+      //this.currentStep = 999;
+      this.showResult = !this.showResult;
     }
   }
 
@@ -90,7 +96,16 @@ export class QuizItemComponent implements OnInit, OnDestroy {
 
   }
 
-  goToNextQuestion() {
+  delayNextQuestion(e: any) {
+   if(e) {
+     this.incrementScore();
+   }
+    setTimeout(() => {
+      this.incrementStep();
+    }, 2500)
+  }
 
+  incrementScore() {
+    this.score += 1;
   }
 }

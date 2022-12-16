@@ -15,6 +15,7 @@ import Swal from 'sweetalert2';
 })
 export class ScannerComponent implements AfterViewInit  {
   scanBareCode: boolean = false;
+  afterScan: boolean = false;
   started: boolean | undefined;
   errorMessage: string | undefined;
   acceptAnyCode = true;
@@ -64,6 +65,8 @@ export class ScannerComponent implements AfterViewInit  {
   scanBarCodeButtonClick (): void {
     this.scanBareCode = !this.scanBareCode;
     this.scanBareCode ? this.initializeScanner() : Quagga.stop();
+    Quagga.stop();
+    this.afterScan = false;
     this.shoppingCart.clear();
     this.items = [];
   }
@@ -131,6 +134,7 @@ export class ScannerComponent implements AfterViewInit  {
           this.started = false;
         } else  {
           console.log(`Quagga initialization succeeded`);
+          this.afterScan = false;
           Quagga.start();
           this.started = true;
           this.changeDetectorRef.detectChanges();
@@ -169,6 +173,8 @@ export class ScannerComponent implements AfterViewInit  {
     this.lastScannedCodeDate = now;
     this.beepService.beep();
     this.changeDetectorRef.detectChanges();
+    this.afterScan = true
+    Quagga.stop();
   }
 
   clearCart() {
