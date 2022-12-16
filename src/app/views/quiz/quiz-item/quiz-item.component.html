@@ -1,0 +1,16 @@
+<button routerLink="/quiz">Retour</button>
+
+<app-progress-bar [currentStep]="currentStep" [total]="questionList.length"></app-progress-bar>
+
+<button (click)="incrementStep()">Suivant</button>
+
+<ng-container *ngFor="let question of questionList; index as i">
+  <ng-container *ngIf="currentStep === i + 1">
+    <app-question [question]="question"></app-question>
+  </ng-container>
+</ng-container>
+
+
+<aside>
+  <button>J'ai compris !</button>
+</aside>

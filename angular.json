@@ -111,5 +111,7 @@
       }
     }
   },
+
   "defaultProject": "lemontri-front"
+
 }

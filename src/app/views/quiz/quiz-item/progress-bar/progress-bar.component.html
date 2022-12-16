@@ -1,0 +1,7 @@
+<div class="stepper">
+  <div class="progress-bar-container">
+    <div class="progress-bar" [ngStyle]="{'width.%': currentStep && multiplier ? currentStep * multiplier : 0}"></div>
+  </div>
+
+  <span class="steps">{{ currentStep }} sur {{total}}</span>
+</div>
